@@ -11,7 +11,7 @@
     <ContentPage.BindingContext>
         <local:SchedulerViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>
-
+    
     <ContentPage.Resources>
         <local:SfImageSourceConverter x:Key="imageConverter" />
     </ContentPage.Resources>
@@ -38,7 +38,9 @@
                 </scheduler:SfScheduler.TimelineView>
 
                 <scheduler:SfScheduler.ResourceView>
-                    <scheduler:SchedulerResourceView Resources="{Binding Resources}">
+                    <scheduler:SchedulerResourceView 
+                        x:DataType="local:ResourceViewModel"
+                        Resources="{Binding Resources}">
                         <scheduler:SchedulerResourceView.HeaderTemplate>
                             <DataTemplate>
                                 <StackLayout Padding="5"
